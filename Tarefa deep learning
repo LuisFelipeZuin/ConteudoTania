@@ -1,0 +1,50 @@
+// Assunto: autovalores e autovetores
+
+//Código para gerar o autovalor e autovetor em uma matriz 2x2 {(2,1),(0,2)} em Pytorch , usando o exercício de exemplo 2
+
+%matplotlib inline
+import torch
+from IPython import display
+from d2l import torch as d2l
+
+torch.eig(torch.tensor([[2, 1], [0, 2]], dtype=torch.float64),
+          eigenvectors=True)
+          
+          
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.EigenDecomposition;
+import org.apache.commons.math3.linear.RealMatrix;
+
+// Código adaptado para java, ele usa a biblioteca Apache commons math
+
+public class EigenvaluesEigenvectors {
+    public static void main(String[] args) {
+        double[][] matrixData = {{2, 1}, {0, 2}};
+        RealMatrix matrix = new Array2DRowRealMatrix(matrixData);
+
+        EigenDecomposition decomposition = new EigenDecomposition(matrix);
+
+        double[] eigenvalues = decomposition.getRealEigenvalues();
+        RealMatrix eigenvectors = decomposition.getV();
+
+        System.out.println("Eigenvalues:");
+        for (double eigenvalue : eigenvalues) {
+            System.out.println(eigenvalue);
+        }
+
+        System.out.println("Eigenvectors:");
+        for (int i = 0; i < eigenvectors.getColumnDimension(); i++) {
+            double[] eigenvector = eigenvectors.getColumn(i);
+            System.out.print("[ ");
+            for (double component : eigenvector) {
+                System.out.print(component + " ");
+            }
+            System.out.println("]");
+        }
+    }
+}          
+          
+          
+          
+          
+         
